@@ -1,8 +1,10 @@
 import {
+  Body,
   Controller,
   Get,
   HttpCode,
   HttpStatus,
+  Post,
   Req,
   Res,
   UseGuards,
@@ -10,6 +12,7 @@ import {
 import { AuthService } from 'src/auth/auth.service';
 import { JWTGuard } from 'src/auth/guards/jwt.guard';
 import { CostsService } from './costs.service';
+import { CreateCostDto } from './dto/create-cost.dto';
 
 @Controller('cost')
 export class CostsController {
@@ -29,5 +32,18 @@ export class CostsController {
     );
 
     return res.send(filteredCosts);
+  }
+
+  @UseGuards(JWTGuard)
+  @Post()
+  @HttpCode(HttpStatus.OK)
+  async createCost(@Body() createCostDto: CreateCostDto, @Req() req) {
+    const user = await this.authService.getUserByTokenData(req.token);
+
+    return await this.costsService.create({
+      ...createCostDto,
+      //@ts-ignore
+      userId: user._id as string,
+    });
   }
 }
