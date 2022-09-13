@@ -17,6 +17,7 @@ export class JWTGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
 
     const token = request.headers.authorization.split(' ')[1];
+    console.log(request.headers.authorization);
 
     if (!token) {
       throw new UnauthorizedException('Ошибка авторизации');
