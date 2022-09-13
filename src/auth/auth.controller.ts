@@ -25,7 +25,7 @@ export class AuthController {
 
   @UseGuards(LoginGuard)
   @Post('login')
-  async loginnUser(@Body() loginUserDto: LoginUserDto, @Res() res: Response) {
+  async loginUser(@Body() loginUserDto: LoginUserDto, @Res() res: Response) {
     const user = await this.usersService.login(loginUserDto);
 
     const access = await this.authService.generateAccessToken(user);
