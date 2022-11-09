@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+
 import { Cost, CostsDocument } from 'src/schemas/costs.schema';
 import { CreateCostDto } from './dto/create-cost.dto';
 import { UpdateCostDto } from './dto/update-cost.dto';
@@ -28,7 +29,6 @@ export class CostsService {
       { _id: id },
       { $set: { ...updateCostDto } },
     );
-
     return this.findOne(id);
   }
 

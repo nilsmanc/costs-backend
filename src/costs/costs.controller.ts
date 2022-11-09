@@ -12,6 +12,7 @@ import {
   Res,
   UseGuards,
 } from '@nestjs/common';
+
 import { AuthService } from 'src/auth/auth.service';
 import { JWTGuard } from 'src/auth/guards/jwt.guard';
 import { CostsService } from './costs.service';
@@ -34,7 +35,6 @@ export class CostsController {
     const filteredCosts = costs.filter(
       (cost) => cost.userId === user._id.toString(),
     );
-
     return res.send(filteredCosts);
   }
 

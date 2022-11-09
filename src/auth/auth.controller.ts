@@ -1,4 +1,3 @@
-import { UsersService } from './../users/users.service';
 import {
   Body,
   Controller,
@@ -7,8 +6,10 @@ import {
   Res,
   UseGuards,
 } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
 import { Response } from 'express';
+
+import { UsersService } from './../users/users.service';
+import { CreateUserDto } from './dto/create-user.dto';
 import { RegistrationGuard } from './guards/registration.guard';
 import { LoginUserDto } from './dto/login-user.dto';
 import { LoginGuard } from './guards/login.guard';

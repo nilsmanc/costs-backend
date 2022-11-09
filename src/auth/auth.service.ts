@@ -1,6 +1,7 @@
-import { User } from './../schemas/users.schema';
 import { JwtService } from '@nestjs/jwt/dist';
 import { Injectable } from '@nestjs/common';
+
+import { User } from './../schemas/users.schema';
 import { UsersService } from 'src/users/users.service';
 import { jwtConstants } from './constants';
 
@@ -16,7 +17,6 @@ export class AuthService {
     if (!user) {
       return null;
     }
-
     return user;
   }
 
