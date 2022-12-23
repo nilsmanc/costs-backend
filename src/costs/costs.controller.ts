@@ -13,8 +13,8 @@ import {
   UseGuards,
 } from '@nestjs/common';
 
-import { AuthService } from 'src/auth/auth.service';
-import { JWTGuard } from 'src/auth/guards/jwt.guard';
+import { AuthService } from '../auth/auth.service';
+import { JWTGuard } from '../auth/guards/jwt.guard';
 import { CostsService } from './costs.service';
 import { CreateCostDto } from './dto/create-cost.dto';
 import { UpdateCostDto } from './dto/update-cost.dto';

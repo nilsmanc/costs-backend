@@ -2,7 +2,7 @@ import { JwtService } from '@nestjs/jwt/dist';
 import { Injectable } from '@nestjs/common';
 
 import { User } from './../schemas/users.schema';
-import { UsersService } from 'src/users/users.service';
+import { UsersService } from '../users/users.service';
 import { jwtConstants } from './constants';
 
 @Injectable()

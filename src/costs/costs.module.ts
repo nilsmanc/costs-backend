@@ -3,8 +3,8 @@ import { Module } from '@nestjs/common';
 
 import { CostsController } from './costs.controller';
 import { CostsService } from './costs.service';
-import { Cost, CostsSchema } from 'src/schemas/costs.schema';
-import { AuthModule } from 'src/auth/auth.module';
+import { Cost, CostsSchema } from '../schemas/costs.schema';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
