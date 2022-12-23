@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "env": {
+    "SERVER_URL": "mongodb+srv://costsadmin:LHABq9agsIsfJMi4@cluster0.zi05mkg.mongodb.net/?retryWrites=true&w=majority",
+    "DATABASE_NAME": "Costs"
+  },
   "builds": [
     {
       "src": "src/main.ts",
